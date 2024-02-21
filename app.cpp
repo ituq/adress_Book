@@ -40,13 +40,15 @@ int main(){
         switch (action)
         {
         case 1:
+            clearScreen();
             search();
             break;
         case 2:
+            clearScreen();
             addEntry();
             break;
         case 3:
-            break;
+            return 0;
         default:
             cout<<"";
         }
@@ -70,6 +72,7 @@ void addEntry(){
     Date birthday={getInput<int>(cin),getInput<int>(cin),getInput<int>(cin)};
     Entry e={first_name,last_name,phone_number,birthday};
     //TODO add duplicate checking and backend actually add entry
-    cout<<"Successfully Added! Returning to main menu...";
-    this_thread::sleep_for(chrono::milliseconds(500));
+    cout<<"Successfully Added! Returning to main menu...\n";
+    this_thread::sleep_for(chrono::milliseconds(1000));
+    clearScreen();
 }
